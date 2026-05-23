@@ -15,37 +15,110 @@ topページ
     font-size: 1rem;
     font-weight: normal;
   }
-  .mv-area {
-    img {
-      height: 60rem;
-      object-fit: cover;
-    }
-  }
-  .section-about {
-    .cont-area {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      max-width: 53rem;
-      margin: 7rem auto 0;
-    }
-    @include mix.mq-down {
-      .cont-area {
-        flex-direction: column;
-        .image-circle img {
-          margin-right: 0;
-        }
-      }
-      .title-text-wrap {
-        margin-top: 1rem;
-      }
-    }
-  }// section-about
-  .section-category {
-    .cont-area {
-      display: flex;
-      max-width: 87.1rem;
-      margin: 7rem auto 0;
-    }
-  }
+}
+.typewriter .top-text {
+  /* ①まずWebフォント ＞ ②まだ読み込み中ならMSゴシック ＞ ③最終予備 */
+  font-family: "DotGothic16", "MS Gothic", monospace;
+  letter-spacing: 0.1em;
+  position: relative;
+  display: inline-flex;
+}
+
+
+/* 1文字ずつの初期状態（最初は透明） */
+.typewriter .top-text span {
+  opacity: 0;
+  position: relative;
+  animation: show-text 0s forwards;
+}
+
+@keyframes show-text {
+  to { opacity: 1; }
+}
+
+/* ーーー 【速度調整】全25文字：1文字 0.25秒 ＋ 2箇所ストップ ーーー */
+.typewriter .top-text span:nth-child(1)  { animation-delay: 0.25s; } /* こ */
+.typewriter .top-text span:nth-child(2)  { animation-delay: 0.50s; } /* ん */
+.typewriter .top-text span:nth-child(3)  { animation-delay: 0.75s; } /* に */
+.typewriter .top-text span:nth-child(4)  { animation-delay: 1.00s; } /* ち */
+.typewriter .top-text span:nth-child(5)  { animation-delay: 1.25s; } /* は */
+.typewriter .top-text span:nth-child(6)  { animation-delay: 1.50s; } /* 。（最初の終わり） */
+
+/* ーーー 【新規】ここで 0.75秒間 止まります（本来 1.75s のところを 2.50s に） ーーー */
+.typewriter .top-text span:nth-child(7)  { animation-delay: 2.50s; } /* @ */
+.typewriter .top-text span:nth-child(8)  { animation-delay: 2.75s; } /* n */
+.typewriter .top-text span:nth-child(9)  { animation-delay: 3.00s; } /* k */
+.typewriter .top-text span:nth-child(10) { animation-delay: 3.25s; } /* D */
+.typewriter .top-text span:nth-child(11) { animation-delay: 3.50s; } /* O */
+.typewriter .top-text span:nth-child(12) { animation-delay: 3.75s; } /* T */
+.typewriter .top-text span:nth-child(13) { animation-delay: 4.00s; } /* を */
+.typewriter .top-text span:nth-child(14) { animation-delay: 4.25s; } /* 検 */
+.typewriter .top-text span:nth-child(15) { animation-delay: 4.50s; } /* 索 */
+.typewriter .top-text span:nth-child(16) { animation-delay: 4.75s; } /* し */
+.typewriter .top-text span:nth-child(17) { animation-delay: 5.00s; } /* た */
+.typewriter .top-text span:nth-child(18) { animation-delay: 5.25s; } /* ね */
+.typewriter .top-text span:nth-child(19) { animation-delay: 5.50s; } /* 。 */
+
+/* ーーー ここで 1秒間 止まります（本来 5.75s のところを 6.75s に） ーーー */
+.typewriter .top-text span:nth-child(20) { animation-delay: 6.75s; } /* あ */
+.typewriter .top-text span:nth-child(21) { animation-delay: 7.00s; } /* り */
+.typewriter .top-text span:nth-child(22) { animation-delay: 7.25s; } /* が */
+.typewriter .top-text span:nth-child(23) { animation-delay: 7.50s; } /* と */
+.typewriter .top-text span:nth-child(24) { animation-delay: 7.75s; } /* う */
+.typewriter .top-text span:nth-child(25) { animation-delay: 8.00s; } /* 。（最後の文字） */
+
+/* ーーー カーソルの基本共通設定 ーーー */
+.typewriter .top-text span::after {
+  content: "";
+  border-right: .15em solid vars.$typewriterColor;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -0.1em;
+  opacity: 0;
+}
+
+/* ーーー 各文字のカーソルが出現するタイミング ーーー */
+.typewriter .top-text span:nth-child(1)::after  { animation: show-cursor 0.25s step-end; animation-delay: 0.25s; }
+.typewriter .top-text span:nth-child(2)::after  { animation: show-cursor 0.25s step-end; animation-delay: 0.50s; }
+.typewriter .top-text span:nth-child(3)::after  { animation: show-cursor 0.25s step-end; animation-delay: 0.75s; }
+.typewriter .top-text span:nth-child(4)::after  { animation: show-cursor 0.25s step-end; animation-delay: 1.00s; }
+.typewriter .top-text span:nth-child(5)::after  { animation: show-cursor 0.25s step-end; animation-delay: 1.25s; }
+.typewriter .top-text span:nth-child(6)::after  { animation: show-cursor 1.00s step-end; animation-delay: 1.50s; } /* 【ストップ対応】0.25s + 0.75s = 1.00s間 表示 */
+
+.typewriter .top-text span:nth-child(7)::after  { animation: show-cursor 0.25s step-end; animation-delay: 2.50s; }
+.typewriter .top-text span:nth-child(8)::after  { animation: show-cursor 0.25s step-end; animation-delay: 2.75s; }
+.typewriter .top-text span:nth-child(9)::after  { animation: show-cursor 0.25s step-end; animation-delay: 3.00s; }
+.typewriter .top-text span:nth-child(10)::after { animation: show-cursor 0.25s step-end; animation-delay: 3.25s; }
+.typewriter .top-text span:nth-child(11)::after { animation: show-cursor 0.25s step-end; animation-delay: 3.50s; }
+.typewriter .top-text span:nth-child(12)::after { animation: show-cursor 0.25s step-end; animation-delay: 3.75s; }
+.typewriter .top-text span:nth-child(13)::after { animation: show-cursor 0.25s step-end; animation-delay: 4.00s; }
+.typewriter .top-text span:nth-child(14)::after { animation: show-cursor 0.25s step-end; animation-delay: 4.25s; }
+.typewriter .top-text span:nth-child(15)::after { animation: show-cursor 0.25s step-end; animation-delay: 4.50s; }
+.typewriter .top-text span:nth-child(16)::after { animation: show-cursor 0.25s step-end; animation-delay: 4.75s; }
+.typewriter .top-text span:nth-child(17)::after { animation: show-cursor 0.25s step-end; animation-delay: 5.00s; }
+.typewriter .top-text span:nth-child(18)::after { animation: show-cursor 0.25s step-end; animation-delay: 5.25s; }
+.typewriter .top-text span:nth-child(19)::after { animation: show-cursor 1.25s step-end; animation-delay: 5.50s; } /* 【ストップ対応】0.25s + 1.00s = 1.25s間 表示 */
+
+.typewriter .top-text span:nth-child(20)::after { animation: show-cursor 0.25s step-end; animation-delay: 6.75s; }
+.typewriter .top-text span:nth-child(21)::after { animation: show-cursor 0.25s step-end; animation-delay: 7.00s; }
+.typewriter .top-text span:nth-child(22)::after { animation: show-cursor 0.25s step-end; animation-delay: 7.25s; }
+.typewriter .top-text span:nth-child(23)::after { animation: show-cursor 0.25s step-end; animation-delay: 7.50s; }
+.typewriter .top-text span:nth-child(24)::after { animation: show-cursor 0.25s step-end; animation-delay: 7.75s; }
+
+/* ーーー 最後の25文字目に、無限のゆったり点滅を設定 ーーー */
+.typewriter .top-text span:nth-child(25)::after {
+  animation: final-blink 1.2s step-end infinite;
+  animation-delay: 8.00s;
+}
+
+/* 1〜24文字目用：指定時間だけ表示して消す */
+@keyframes show-cursor {
+  0%, 100% { opacity: 1; }
+}
+
+/* 25文字目（最後）専用：1.2秒周期のゆったり点滅 */
+@keyframes final-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
