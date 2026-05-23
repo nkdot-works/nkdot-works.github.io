@@ -7,6 +7,8 @@ Layout
 html {
   position: relative;
 	min-width: 0;
+  height: 100%;
+  margin: 0;
   overflow: hidden;
   color: vars.$baseFontColor;
 }
@@ -16,6 +18,9 @@ html {
   width: 100%;
   min-width: 37.5rem;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
   background-color: vars.$blackColor;
   color: vars.$whiteColor;
   overflow: auto;
@@ -32,6 +37,7 @@ html {
 /* footer-layout
 ------------------------- */
 .footer-layout {
+  padding: 16px 0;
   text-align: center;
   a {
     color: vars.$linkColor;
