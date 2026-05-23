@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "build:ejs": "node build.js",
+    "build:scss": "sass ./src/scss:./css",
+    "build": "npm run build:ejs && npm run build:scss",
+
+    "watch:scss": "sass --watch ./src/scss:./dist/css"
+  },
+
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "sass": "^1.89.0"
+  }
+}
