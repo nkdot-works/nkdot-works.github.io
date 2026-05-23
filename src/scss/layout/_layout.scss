@@ -16,7 +16,8 @@ html {
   width: 100%;
   min-width: 37.5rem;
   height: 100%;
-  background-color: vars.$whiteColor;
+  background-color: vars.$blackColor;
+  color: vars.$whiteColor;
   overflow: auto;
 }
 /* section-area
@@ -32,4 +33,7 @@ html {
 ------------------------- */
 .footer-layout {
   text-align: center;
+  a {
+    color: vars.$linkColor;
+  }
 }

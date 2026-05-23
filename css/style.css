@@ -61,7 +61,7 @@ a {
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
-  color: #124897;
+  color: #fdff52;
 }
 a:focus {
   outline: none;
@@ -187,7 +187,7 @@ table th, table td {
 }
 
 .link-color {
-  color: #124897;
+  color: #fdff52;
 }
 
 .text-left {
@@ -228,7 +228,8 @@ html {
   width: 100%;
   min-width: 37.5rem;
   height: 100%;
-  background-color: #fff;
+  background-color: #000;
+  color: #fff;
   overflow: auto;
 }
 
@@ -245,6 +246,9 @@ html {
 ------------------------- */
 .footer-layout {
   text-align: center;
+}
+.footer-layout a {
+  color: #fdff52;
 }
 
 /*====================================
@@ -348,6 +352,11 @@ topページ
 ====================================*/
 .p-top {
   padding-bottom: 10rem;
+}
+.p-top .top-text {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: normal;
 }
 .p-top .mv-area img {
   height: 60rem;
