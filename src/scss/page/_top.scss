@@ -6,6 +6,10 @@ topページ
 ====================================*/
 
 .p-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
   padding-bottom: 10rem;
   .top-text {
     text-align: center;
